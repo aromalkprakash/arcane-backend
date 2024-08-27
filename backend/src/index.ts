@@ -21,7 +21,7 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET
 });
 
-const PORT = process.env.PORT || 4000 ;
+const PORT = process.env.PORT || 5000 ;
 app.use(cors({ origin: 'http://localhost:3000', credentials: true })); 
 
 
