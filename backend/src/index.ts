@@ -9,7 +9,7 @@ import reviewRoutes from "./routes/reviewRoutes"
 import movieRoutes from "./routes/movieRoutes";
 import chatRoutes from "./routes/chatRoutes";
 import connectUserDb from "./lib/db/Usersdb";
-// import { app, server } from "./Socket/Socket";
+import { app, server } from "./Socket/Socket";
 
 
 dotenv.config();
@@ -19,10 +19,6 @@ cloudinary.config({
   api_key: process.env.CLOUDINARY_API_KEY,
   api_secret: process.env.CLOUDINARY_API_SECRET
 });
-
-
-const app = express();     // parse req.body
-
 
 const port = process.env.PORT || 4000 ;
 app.use(cors({ origin: 'http://localhost:3000', credentials: true })); 
@@ -39,7 +35,7 @@ app.use("/api/movie", movieRoutes);
 app.use("/api/chat", chatRoutes);
 
 
-app.listen(port, () => {
+server.listen(port, () => {
   console.log(`Users server listening on port ${port}`);
 });
 
