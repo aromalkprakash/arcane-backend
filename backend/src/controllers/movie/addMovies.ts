@@ -67,3 +67,6 @@ export const addMovie = async (req: CreatePostRequest, res: any) => {
     res.status(500).json({ error: "Internal server error" });
   }
 };
+
+
+
