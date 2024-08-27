@@ -33,7 +33,7 @@ app.use("/api/review", reviewRoutes);
 app.use("/api/movie", movieRoutes);
 app.use("/api/chat", chatRoutes);
 
-server.listen(port, '0.0.0.0', () => {
+server.listen(process.env.PORT, () => {
   console.log(`Users server listening on port ${port}`);
 });
 
