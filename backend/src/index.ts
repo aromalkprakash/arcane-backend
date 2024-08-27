@@ -35,7 +35,7 @@ app.use("/api/movie", movieRoutes);
 app.use("/api/chat", chatRoutes);
 
 
-server.listen(port, () => {
+server.listen(port, '0.0.0.0', () => {
   console.log(`Users server listening on port ${port}`);
 });
 
