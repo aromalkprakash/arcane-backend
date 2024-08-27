@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import Notification from "../models/notification";
+import Notification from "../../models/notification";
 
 export const createNotification = async (req: Request, res: Response) => {
     const { type, from, to } = req.body;

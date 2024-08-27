@@ -19,7 +19,7 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET
 });
 
-const port = Number(process.env.PORT) || 4000;
+const port = Number(process.env.PORT) || 5000;
 app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
 
 app.use(express.json({ limit: "5mb" }));  // parse req.body
