@@ -1,18 +1,24 @@
 import express from "express";
+import { getAllUsers } from "../controllers/user/getAllUsers";
 import { protectRoute } from "../middleware/protectRoute";
-
+import { getUserByUsername } from "../controllers/user/getUserDetails";
+import { getMReview } from "../controllers/user/getMReview";
+import { getUserDetails } from "../controllers/user/getUserbyId";
 import { searchAll } from "../controllers/user/search/getAllMoviesAndUsers";
-
-import { getFavoriteMovieDetails, getWatchlistDetails } from "../controllers/user/movie/watchListMovie";
-
+import { getCounts } from "../controllers/user/profileCount/getCounts";
+import { getWatchlist } from "../controllers/user/profileCount/watchListDetails";
+import { getFollowingDetails } from "../controllers/user/profileCount/followingDetails";
+import { getFollowersDetails } from "../controllers/user/profileCount/followersDetails";
+import { getWatchlistDetails } from "../controllers/user/movie/watchListMovie";
+import { getFavoriteMovieDetails } from "../controllers/user/movie/favoriteMovie";
+import { getLikedReviewDetails } from "../controllers/user/profileCount/likedReviewDetails";
 import { updateProfile } from "../controllers/user/updateProfile";
-import { follow, unFollow } from "../controllers/user/follow-unfollow/follow_unfollow";
+import { follow } from "../controllers/user/follow-unfollow/follow";
+import { unFollow } from "../controllers/user/follow-unfollow/unfollow";
 import { updateLikedReview } from "../controllers/user/likeReview/likeReview";
 import { removeLikedReview } from "../controllers/user/likeReview/removeLikeReview";
 import { updateWatchList } from "../controllers/user/watchList";
 import { updateFavorite } from "../controllers/user/favorite";
-import { getAllUsers, getMReview, getUserByUsername, getUserDetails } from "../controllers/get";
-import { getCounts, getFollowersDetails, getFollowingDetails, getLikedReviewDetails, getWatchlist } from "../controllers/user/profileCount/count";
 
 // import { getUsersForSidebar } from "../controllers/messageService/getFollowingUsers";
 

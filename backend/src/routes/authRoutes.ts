@@ -1,9 +1,10 @@
 import express from "express";
 import { googleLogin } from "../controllers/user/auth/google";
-import { login, logout, signup } from "../controllers/user/auth/auth";
-
+import { login } from "../controllers/user/auth/login";
+import { logout } from "../controllers/user/auth/logout";
+import { signup } from "../controllers/user/auth/signup";
+import { getMe } from "../controllers/user/getMe";
 import { protectRoute } from "../middleware/protectRoute";
-import { getMe } from "../controllers/get";
 
 
 const router = express.Router();

@@ -1,8 +1,10 @@
 import express from "express";
+import { getUReview } from "../controllers/movie/getUReview";
+import { getAllMovies } from "../controllers/movie/getAllMovies";
+import { getMovieDetails } from "../controllers/movie/getmovieDetails";
 import { addMovie } from "../controllers/movie/addMovies";
 import { updateMovie } from "../controllers/movie/updateMovie";
 import { fetchMovies } from "../controllers/movie/search/searchMovies";
-import { getAllMovies, getMovieDetails, getUReview } from "../controllers/movie/get_movie";
 
 
 const router = express.Router();
