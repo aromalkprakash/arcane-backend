@@ -1,6 +1,5 @@
 import { Request, Response } from 'express';
 import { Review } from "../../../models/Review";
-import { getMovieDetails } from "../../movie/getmovieDetails";
 import { User } from "../../../models/userModel";
 import { Movie } from "../../../models/Movie";
 
