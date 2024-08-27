@@ -1,4 +1,5 @@
 import express from 'express';
+import 'punycode';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import { v2 as cloudinary } from "cloudinary";
