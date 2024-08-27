@@ -20,7 +20,7 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET
 });
 
-const port = Number(process.env.PORT) || 5000;
+const PORT = process.env.PORT || 5000;
 app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
 
 app.use(express.json({ limit: "5mb" }));  // parse req.body
@@ -34,9 +34,8 @@ app.use("/api/review", reviewRoutes);
 app.use("/api/movie", movieRoutes);
 app.use("/api/chat", chatRoutes);
 
-server.listen(process.env.PORT, () => {
-  console.log(`Users server listening on port ${port}`);
+server.listen(PORT, () => {
+  connectUserDb();
+  console.log(`Users server listening on port ${PORT}`);
 });
 
-
-connectUserDb();
