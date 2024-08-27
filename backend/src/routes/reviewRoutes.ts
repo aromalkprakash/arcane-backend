@@ -1,11 +1,10 @@
 import express from 'express';
 
-import { getFollowingUsersReview } from "../controllers/review/reviewOfFollowing/getFollowingUsersReview";
 import { addReview } from "../controllers/review/addreview";
 import { likeReview } from "../controllers/review/likeReview";
 import { deleteReview } from "../controllers/review/deleteReview";
 import { protectRoute } from "../middleware/protectRoute";
-import { getAllReviews, getReviewById, getReviewByMovie, getReviewsByUser } from "../controllers/review/get_review";
+import { getAllReviews, getFollowingUsersReview, getReviewById, getReviewByMovie, getReviewsByUser } from "../controllers/review/get_review";
 
 
 const router = express.Router();
