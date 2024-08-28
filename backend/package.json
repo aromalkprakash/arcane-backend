@@ -34,7 +34,6 @@
     "mongoose": "^8.4.5",
     "nodemailer": "^6.9.14",
     "nodemon": "^3.1.4",
-    "punycode": "^2.3.1",
     "socket.io": "^4.7.5",
     "typescript": "^5.5.3",
     "whatwg-url": "^14.0.0"
