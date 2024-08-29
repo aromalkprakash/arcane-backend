@@ -22,7 +22,7 @@ export const follow = async (req: CustomRequest, res: Response) => {
         // await notifyUser('follow', req.user._id, userToModify._id);
 
         res.status(200).json({ message: 'User followed successfully' });
-    } catch (error) {
+    } catch (error: any) {
         res.status(500).json({ error: 'Failed to follow user' });
     }
 };

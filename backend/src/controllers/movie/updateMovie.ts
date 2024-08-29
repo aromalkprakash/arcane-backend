@@ -37,7 +37,7 @@ export const updateMovie = async (req: Request, res: Response) => {
     }
 
     res.status(200).json(movie);
-  } catch (error) {
+  } catch (error: any) {
     console.error(error);
     res.status(500).json({ message: "Server error" });
   }

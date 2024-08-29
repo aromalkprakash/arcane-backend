@@ -21,7 +21,7 @@ cloudinary_1.v2.config({
     api_key: process.env.CLOUDINARY_API_KEY,
     api_secret: process.env.CLOUDINARY_API_SECRET
 });
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 5000;
 Socket_1.app.use((0, cors_1.default)({ origin: 'http://localhost:3000', credentials: true }));
 Socket_1.app.use(express_1.default.json({ limit: "5mb" }));
 Socket_1.app.use(express_1.default.urlencoded({ extended: true }));
@@ -32,6 +32,6 @@ Socket_1.app.use("/api/review", reviewRoutes_1.default);
 Socket_1.app.use("/api/movie", movieRoutes_1.default);
 Socket_1.app.use("/api/chat", chatRoutes_1.default);
 Socket_1.server.listen(PORT, () => {
-    console.log(`Users server listening on port ${PORT}`);
+    console.log(`arcane backend server listening on port ${PORT}`);
 });
 (0, Usersdb_1.default)();

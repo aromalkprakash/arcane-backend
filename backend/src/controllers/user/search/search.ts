@@ -11,7 +11,7 @@ export const searchUsers = async (req: Request, res: Response) => {
     try {
         const users = await User.find({ name: { $regex: query, $options: 'i' } });
         res.json(users);
-    } catch (error) {
+    } catch (error: any) {
         res.status(500).json({ message: 'Internal server error' });
     }
 };

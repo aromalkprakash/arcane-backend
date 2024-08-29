@@ -16,7 +16,7 @@ export const updateLikedReview = async (req: Request, res: Response) => {
     }
 
     res.status(200).json({ message: 'Success' });
-  } catch (error) {
+  } catch (error: any) {
     console.error('Error in updateLikedReviews:', error);
     res.status(500).json({ message: 'Internal server error', error });
   }

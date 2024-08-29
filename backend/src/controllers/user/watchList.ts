@@ -17,7 +17,7 @@ export const updateWatchList = async (req: Request, res: Response) => {
         }
 
         res.status(200).json({ message: 'Success' });
-    } catch (error) {
+    } catch (error: any) {
         console.error('Error in updateWatchList:', error);
         res.status(500).json({ message: 'Internal server error', error });
     }

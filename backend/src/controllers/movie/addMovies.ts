@@ -62,7 +62,7 @@ export const addMovie = async (req: CreatePostRequest, res: any) => {
     });
     await newMovie.save();
     res.status(201).json(newMovie);
-  } catch (error) {
+  } catch (error: any) {
     console.error("Error in createPost controller:", error);
     res.status(500).json({ error: "Internal server error" });
   }

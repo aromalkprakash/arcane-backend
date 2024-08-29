@@ -12,7 +12,7 @@ export const createNotification = async (req: Request, res: Response) => {
         const newNotification = new Notification({ type, from, to });
         await newNotification.save();
         res.status(201).json(newNotification);
-    } catch (error) {
+    } catch (error: any) {
         res.status(500).json({ error: 'Failed to create notification' });
     }
 };
