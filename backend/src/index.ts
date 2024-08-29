@@ -12,18 +12,19 @@ import connectUserDb from "./lib/db/Usersdb";
 import { app, server } from "./Socket/Socket";
 
 
+
 dotenv.config();
-
-
-const PORT = process.env.PORT || 5000 ;
-app.use(cors({ origin: 'http://localhost:3000', credentials: true })); 
-
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
   api_key: process.env.CLOUDINARY_API_KEY,
   api_secret: process.env.CLOUDINARY_API_SECRET
 });
+
+const PORT = process.env.PORT || 4000 ;
+app.use(cors({ origin: 'http://localhost:3000', credentials: true })); 
+
+
 
 
 app.use(express.json({limit:"5mb"}));  
@@ -39,7 +40,8 @@ app.use("/api/chat", chatRoutes);
 
 
 server.listen(PORT, () => {
-  connectUserDb();
   console.log(`Users server listening on port ${PORT}`);
 });
+
+connectUserDb();
 
