@@ -21,7 +21,9 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET
 });
 
-const PORT = process.env.PORT || 5000 ;
+const HOST = '0.0.0.0';
+
+const PORT = Number( process.env.PORT || 5000 );
 app.use(cors({ origin: 'http://localhost:3000', credentials: true })); 
 
 
@@ -39,7 +41,7 @@ app.use("/api/movie", movieRoutes);
 app.use("/api/chat", chatRoutes);
 
 
-server.listen(PORT, () => {
+server.listen(PORT, HOST, () => {
   console.log(`arcane backend server listening on port ${PORT}`);
 });
 
