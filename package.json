@@ -5,6 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "stage": "tsc && git status && git add .",
+    "build": "tsc && npm install",
     "dev": "ts-node-dev --trace-deprecation src/index.ts",
     "start": "nodemon src/index.ts"
   },
