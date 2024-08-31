@@ -23,7 +23,7 @@ cloudinary_1.v2.config({
 });
 const HOST = '0.0.0.0';
 const PORT = Number(process.env.PORT || 5000);
-Socket_1.app.use((0, cors_1.default)({ origin: 'http://localhost:3000', credentials: true }));
+Socket_1.app.use((0, cors_1.default)({ origin: 'https://arcane-frontend.onrender.com', credentials: true }));
 Socket_1.app.use(express_1.default.json({ limit: "5mb" }));
 Socket_1.app.use(express_1.default.urlencoded({ extended: true }));
 Socket_1.app.use((0, cookie_parser_1.default)());
