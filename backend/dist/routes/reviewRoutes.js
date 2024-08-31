@@ -1,0 +1,25 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = __importDefault(require("express"));
+const getreviewbyMovie_1 = require("../controllers/review/getreviewbyMovie");
+const getReviewbyUser_1 = require("../controllers/review/getReviewbyUser");
+const getFollowingUsersReview_1 = require("../controllers/review/reviewOfFollowing/getFollowingUsersReview");
+const getReviewById_1 = require("../controllers/review/getReviewById");
+const addreview_1 = require("../controllers/review/addreview");
+const likeReview_1 = require("../controllers/review/likeReview");
+const deleteReview_1 = require("../controllers/review/deleteReview");
+const protectRoute_1 = require("../middleware/protectRoute");
+const getAllReview_1 = require("../controllers/review/getAllReview");
+const router = express_1.default.Router();
+router.get("/getallreview", getAllReview_1.getAllReviews);
+router.get("/getmoviereview/:movieId", getreviewbyMovie_1.getReviewByMovie);
+router.get("/getuserreview/:username", getReviewbyUser_1.getReviewsByUser);
+router.get("/getfollowingusersreview/", protectRoute_1.protectRoute, getFollowingUsersReview_1.getFollowingUsersReview);
+router.get("/:reviewId", getReviewById_1.getReviewById);
+router.post("/addreview", protectRoute_1.protectRoute, addreview_1.addReview);
+router.post("/likereview", likeReview_1.likeReview);
+router.delete("/delete/:reviewId", deleteReview_1.deleteReview);
+exports.default = router;

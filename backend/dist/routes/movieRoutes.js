@@ -1,0 +1,20 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = __importDefault(require("express"));
+const getUReview_1 = require("../controllers/movie/getUReview");
+const getAllMovies_1 = require("../controllers/movie/getAllMovies");
+const getmovieDetails_1 = require("../controllers/movie/getmovieDetails");
+const addMovies_1 = require("../controllers/movie/addMovies");
+const updateMovie_1 = require("../controllers/movie/updateMovie");
+const searchMovies_1 = require("../controllers/movie/search/searchMovies");
+const router = express_1.default.Router();
+router.get("/getreviewforpp/:movieId", getUReview_1.getUReview);
+router.get("/getallmovies", getAllMovies_1.getAllMovies);
+router.get("/searchallmovies", searchMovies_1.fetchMovies);
+router.get("/getmoviedetails/:movieId", getmovieDetails_1.getMovieDetails);
+router.post("/addmovie", addMovies_1.addMovie);
+router.post("/updatemovie/:movieId", updateMovie_1.updateMovie);
+exports.default = router;
