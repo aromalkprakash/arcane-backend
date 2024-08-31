@@ -8,8 +8,8 @@ import usersRoutes from "./routes/usersRoutes";
 import reviewRoutes from "./routes/reviewRoutes"
 import movieRoutes from "./routes/movieRoutes";
 import chatRoutes from "./routes/chatRoutes";
-import connectUserDb from "./lib/db/Usersdb";
 import { app, server } from "./Socket/Socket";
+import connectDb from "./lib/db/ConnectDb";
 
 
 dotenv.config();
@@ -42,5 +42,5 @@ server.listen(PORT, HOST, () => {
   console.log(`arcane backend server listening on port ${PORT}`);
 });
 
-connectUserDb();
+connectDb();
 

@@ -1,7 +1,7 @@
 import mongoose, { ConnectOptions } from "mongoose";
 
 
-const connectUserDb = async (): Promise<void> => {
+const connectDb = async (): Promise<void> => {
     const MONGO_URI = process.env.MONGO_URI;
     if (!MONGO_URI) {
         console.error("MONGO_URI is not defined in the environment variables");
@@ -13,12 +13,12 @@ const connectUserDb = async (): Promise<void> => {
             dbName: "cinema", 
             bufferCommands: true,
         } as ConnectOptions);
-        console.log(`MongoDB users connected userdb: ${conn.connection.host}`);
+        console.log(`MongoDB connected: ${conn.connection.host}`);
     } catch (error: any) {
         console.error(`Error connecting to MongoDB: ${error.message}`);
         process.exit(1);
     }
 };
 
-export default connectUserDb;
+export default connectDb;
 

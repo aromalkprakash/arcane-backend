@@ -13,7 +13,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importDefault(require("mongoose"));
-const connectUserDb = () => __awaiter(void 0, void 0, void 0, function* () {
+const connectDb = () => __awaiter(void 0, void 0, void 0, function* () {
     const MONGO_URI = process.env.MONGO_URI;
     if (!MONGO_URI) {
         console.error("MONGO_URI is not defined in the environment variables");
@@ -24,11 +24,11 @@ const connectUserDb = () => __awaiter(void 0, void 0, void 0, function* () {
             dbName: "cinema",
             bufferCommands: true,
         });
-        console.log(`MongoDB users connected userdb: ${conn.connection.host}`);
+        console.log(`MongoDB connected: ${conn.connection.host}`);
     }
     catch (error) {
         console.error(`Error connecting to MongoDB: ${error.message}`);
         process.exit(1);
     }
 });
-exports.default = connectUserDb;
+exports.default = connectDb;

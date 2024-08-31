@@ -13,8 +13,8 @@ const usersRoutes_1 = __importDefault(require("./routes/usersRoutes"));
 const reviewRoutes_1 = __importDefault(require("./routes/reviewRoutes"));
 const movieRoutes_1 = __importDefault(require("./routes/movieRoutes"));
 const chatRoutes_1 = __importDefault(require("./routes/chatRoutes"));
-const Usersdb_1 = __importDefault(require("./lib/db/Usersdb"));
 const Socket_1 = require("./Socket/Socket");
+const ConnectDb_1 = __importDefault(require("./lib/db/ConnectDb"));
 dotenv_1.default.config();
 cloudinary_1.v2.config({
     cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
@@ -35,4 +35,4 @@ Socket_1.app.use("/api/chat", chatRoutes_1.default);
 Socket_1.server.listen(PORT, HOST, () => {
     console.log(`arcane backend server listening on port ${PORT}`);
 });
-(0, Usersdb_1.default)();
+(0, ConnectDb_1.default)();
