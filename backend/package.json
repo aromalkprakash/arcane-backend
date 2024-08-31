@@ -4,7 +4,6 @@
   "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node --max-old-space-size=4096 -r ts-node/register src/server.ts",
     "stage": "tsc && git status && git add .",
     "dev": "ts-node-dev --trace-deprecation src/index.ts"
   },
