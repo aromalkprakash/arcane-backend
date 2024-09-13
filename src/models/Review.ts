@@ -1,4 +1,4 @@
-import mongoose, { Connection, Model } from "mongoose";
+import mongoose from "mongoose";
 import { IReview } from "../types/Usertypes";
 
 const reviewSchema = new mongoose.Schema<IReview>({
